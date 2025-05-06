@@ -38,9 +38,14 @@ public class LoginTela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        loginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite seu login"));
+        loginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder(null));
+        loginTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginTextFieldActionPerformed(evt);
+            }
+        });
 
-        senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite sua senha"));
+        senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder(null));
 
         sairButton.setText("Sair");
         sairButton.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +107,10 @@ public class LoginTela extends javax.swing.JFrame {
             Usuario usuario = new Usuario(login,senha);
             DAO dao = new DAO();
             if(dao.existe(usuario)) {
-                JOptionPane.showMessageDialog(null, "Bem vindo");
+                JOptionPane.showMessageDialog(null, "Bem vindo, " + usuario.getNome() + "!");
+                DashboardTela dt = new DashboardTela();
+                dt.setVisible(true);
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário inválido"); 
             }
@@ -110,6 +118,10 @@ public class LoginTela extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Problemas técnicos. Tente novamente mais tarde");
         }
     }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void loginTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,7 +1,3 @@
 br\maua\poo\sistemaacademico\ConexaoBD.class
 br\maua\poo\sistemaacademico\Usuario.class
 br\maua\poo\sistemaacademico\DAO.class
-br\maua\poo\sistemaacademico\LoginTela.class
-br\maua\poo\sistemaacademico\LoginTela$2.class
-br\maua\poo\sistemaacademico\LoginTela$1.class
-br\maua\poo\sistemaacademico\LoginTela$3.class
